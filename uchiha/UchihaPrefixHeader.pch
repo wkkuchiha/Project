@@ -1,0 +1,30 @@
+//
+//  UchihaPrefixHeader.pch
+//  uchiha
+//
+//  Created by uchiha on 2017/8/11.
+//  Copyright © 2017年 creditease. All rights reserved.
+//
+
+
+#ifndef __IPHONE_3_0
+
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "UIView+SDAutoLayout.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import "CommonMacro.h"
+
+#define iphoneScreenWidth [UIScreen mainScreen].bounds.size.width
+#define iphoneScreenHeight [UIScreen mainScreen].bounds.size.height
+
+
+#endif
+
+
+
+
+

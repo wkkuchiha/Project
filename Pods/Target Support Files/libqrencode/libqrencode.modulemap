@@ -1,0 +1,6 @@
+framework module libqrencode {
+  umbrella header "libqrencode-umbrella.h"
+
+  export *
+  module * { export * }
+}

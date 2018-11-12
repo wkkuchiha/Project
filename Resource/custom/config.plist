@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>url</key>
+	<string>https://api.miutrip.com/api</string>
+	<key>amp_app_key</key>
+	<string>d39482893ae7c005f50cde31c68c950e</string>
+	<key>yunba_app_key</key>
+	<string>568cb9924407a3cd028ab750</string>
+	<key>channel</key>
+	<string>miutrip</string>
+	<key>yunbar_push_topic</key>
+	<string>miutrip2016</string>
+	<key>umeng_app_key</key>
+	<string>568a06d967e58e600b002868</string>
+	<key>fortress_source_id</key>
+	<string>1153</string>
+	<key>test_source_id</key>
+	<string>403</string>
+	<key>source_id</key>
+	<string>1222</string>
+</dict>
+</plist>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width,inital-scale=1">
+                <title>关于 hybird项目</title>
+    </head>
+    <style type="text/css">
+        html,body{
+            width: 100%;
+        }
+    </style>
+    <body>
+        <header class="m-header">
+            <div align="center">
+                注 册
+            </div>
+        </header>
+        <section class="m-register" >
+            <form style="width: 100%;margin-top: 15px">
+                用户名称 : <input type="text" placeholder="请输入用户名" id="username"></br>
+                    用户密码 : <input type="password" placeholder="请输入用户密码" id="password"></br>
+                        电话号码 : <input type="text" placeholder="请输入电话号码" id="mobile"></br>
+                            </form>
+            <p>JavaScriptCore中类及协议：</p>
+            <p>JSContext：给JavaScript提供运行的上下文环境,通过-evaluateScript:方法就可以执行一JS代码</>
+            <p>JSValue：封装了JS与ObjC中的对应的类型，以及调用JS的API等</p>
+            <P>JSManagedValue：管理数据和方法的类</P>
+            <p>JSVirtualMachine：处理线程相关，使用较少</p>
+            <P>JSExport：这是一个协议，如果采用协议的方法交互，自己定义的协议必须遵守此协议，在协议中声明的API都会在JS中暴露出来，才能调用</P>
+            
+        </section>
+        <section>
+            <p>ObjC调用JS</p>
+            <p>在JavaScriptCore中提供的调用JS的方法</p>
+            <p>   - (JSValue *)evaluateScript:(NSString *)script;方法就可以执行一段JavaScript脚本，并且如果其中有方法、变量等信息都会被存储在其中以便在需要的时候使用。
+            JSValue提供了- (JSValue *)callWithArguments:(NSArray *)arguments;方法可以反过来将参数传进去来调用方法
+            </p>
+        </section>
+        <section>
+            <p>    // 一个JSContext对象，就类似于Js中的window， <p>
+            <p>   // 只需要创建一次即可。 <p>
+            <p> JSContext *context = [[JSContext alloc] init]; </p>
+            <p>   // 执行一段js </p>
+            <p>   [context evaluateScript:@"function add(a, b) { return a + b; }"]; </p>
+            <p>   // 根据下标取出方法 </p>
+            <p>   JSValue *add = context[@"add"]; </p>
+            <p>   NSLog(@"Func: %@", add); </p>
+            <p>   // 传入参数 调用取到的方法 </p>
+            <p>   JSValue *sum = [add callWithArguments:@[@(7), @(21)]]; </p>
+            <p>   NSLog(@"Sum: %d",[sum toInt32]); </p>
+            <p>   //OutPut: </p>
+            <p>   // Func: function add(a, b) { return a + b; } </p>
+        </section>
+        <section>
+            <p>JS调用OC
+            
+            使用JavaScriptCore进行原生与js的交互主要是2种方式，block和注入模型使用协议代理。</p>
+        </section>
+        <p><input type="submit" value="立即注册" id="submit" style="padding-left: 20px;width: 95% ;background-color: cornflowerblue;height: 30px;line-height: 30px;text-align: center;"></p>
+            <div>
+                <input type="button" value="重置密码" id="ResetPwd" onclick="OCDemo.callCamera()" style="padding-left: 20px">
+                    <input type="button" value="忘记密码" id="ForgetPwd" onclick="OCDemo.Share()" style="padding-right: 20px;align-content: center;text-align: right;">
+                        </div>
+    </body>
+</html>
+
+<script>
+    function  submit() {
+        document.getElementById("demo").innerHTML="Hello JavaScript!";
+    }
+var callShare = function() {
+    OCModel.share({'title': '标题', 'desc': '内容', 'shareUrl': 'http://www.jianshu.com/p/f896d73c670a');
+}
+</script>
